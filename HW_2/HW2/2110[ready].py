@@ -1,6 +1,6 @@
 from typing import List
 
-def getDescentPeriods(self, prices: List[int]):
+def getDescentPeriods(prices: List[int]):
     """Сложность алгоритма - O(n), т.к. один цикл
 
     Args:
@@ -10,7 +10,7 @@ def getDescentPeriods(self, prices: List[int]):
         sum(dp): возвращаем сумму единиц в массиве, который отражает
         количество дней с плавным спуском цен.
     """
-    n =  len(prices)
+    n = len(prices)
     dp = [1]*n
 
     for i in range(1,n):
@@ -18,4 +18,6 @@ def getDescentPeriods(self, prices: List[int]):
             dp[i] += dp[i-1]
 
     return sum(dp)
+
+print(getDescentPeriods([3,2,1,4]))
     
